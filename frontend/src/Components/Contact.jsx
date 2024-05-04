@@ -3,120 +3,341 @@ import React from 'react'
 const Contact = () => {
   return (
     <div><>
-    {/* Contact 1 - Bootstrap Brain Component */}
-    <section className="bg-light py-3 py-md-5">
+    <meta charSet="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+    <title>FOI App Landing Page</title>
+    <link
+      rel="stylesheet"
+      href="assets/vendors/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <header className="foi-header">
       <div className="container">
-        <div className="row justify-content-md-center">
-          <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-            <h2 className="mb-4 display-5 text-center">Contact</h2>
-            <p className="text-secondary mb-5 text-center">
-              Orci varius natoque penatibus et magnis dis parturient montes,
-              nascetur ridiculus mus. Pellentesque et neque id ligula mattis
-              commodo.
-            </p>
-            <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle" />
-          </div>
-        </div>
-      </div>
-      <div className="container">
-        <div className="row justify-content-lg-center">
-          <div className="col-12 col-lg-9">
-            <div className="bg-white border rounded shadow-sm overflow-hidden">
-              <form action="#!">
-                <div className="row gy-4 gy-xl-5 p-4 p-xl-5">
-                  <div className="col-12">
-                    <label htmlFor="fullname" className="form-label">
-                      Full Name <span className="text-danger">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="fullname"
-                      name="fullname"
-                      defaultValue=""
-                      required=""
-                    />
-                  </div>
-                  <div className="col-12 col-md-6">
-                    <label htmlFor="email" className="form-label">
-                      Email <span className="text-danger">*</span>
-                    </label>
-                    <div className="input-group">
-                      <span className="input-group-text">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={16}
-                          height={16}
-                          fill="currentColor"
-                          className="bi bi-envelope"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
-                        </svg>
-                      </span>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        name="email"
-                        defaultValue=""
-                        required=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-12 col-md-6">
-                    <label htmlFor="phone" className="form-label">
-                      Phone Number
-                    </label>
-                    <div className="input-group">
-                      <span className="input-group-text">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={16}
-                          height={16}
-                          fill="currentColor"
-                          className="bi bi-telephone"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                        </svg>
-                      </span>
-                      <input
-                        type="tel"
-                        className="form-control"
-                        id="phone"
-                        name="phone"
-                        defaultValue=""
-                      />
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <label htmlFor="message" className="form-label">
-                      Message <span className="text-danger">*</span>
-                    </label>
-                    <textarea
-                      className="form-control"
-                      id="message"
-                      name="message"
-                      rows={3}
-                      required=""
-                      defaultValue={""}
-                    />
-                  </div>
-                  <div className="col-12">
-                    <div className="d-grid">
-                      <button className="btn btn-primary btn-lg" type="submit">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
+        <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
+          <a className="navbar-brand" href="index.html">
+            <img src="assets/images/logo.svg" alt="FOI" />
+          </a>
+          <button
+            className="navbar-toggler d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="collapsibleNavId">
+            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li className="nav-item">
+                <a className="nav-link" href="index.html">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="about.html">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="features.html">
+                  Features
+                </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="pagesMenu"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Pages
+                </a>
+                <div className="dropdown-menu" aria-labelledby="pagesMenu">
+                  <a className="dropdown-item" href="blog.html">
+                    Blog
+                  </a>
+                  <a className="dropdown-item" href="login.html">
+                    Login
+                  </a>
+                  <a className="dropdown-item" href="register.html">
+                    Register
+                  </a>
+                  <a className="dropdown-item" href="faq.html">
+                    FAQ
+                  </a>
+                  <a className="dropdown-item" href="404.html">
+                    404
+                  </a>
+                  <a className="dropdown-item" href="careers.html">
+                    Careers
+                  </a>
+                  <a className="dropdown-item" href="blog-single.html">
+                    Single blog
+                  </a>
+                  <a className="dropdown-item" href="privacy-policy.html">
+                    Privacy policy
+                  </a>
                 </div>
-              </form>
+              </li>
+              <li className="nav-item active">
+                <a className="nav-link" href="contact.html">
+                  contact <span className="sr-only">(current)</span>
+                </a>
+              </li>
+            </ul>
+            <ul className="navbar-nav mt-2 mt-lg-0">
+              <li className="nav-item mr-2 mb-3 mb-lg-0">
+                <a className="btn btn-secondary" href="register.html">
+                  Sign up
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="btn btn-secondary" href="login.html">
+                  Login
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div className="container">
+        <section className="page-header">
+          <h2>Tell us about yourself</h2>
+          <h5>
+            Whether you have questions or you would just like to say hello,
+            contact us.
+          </h5>
+        </section>
+        <section className="contact-content">
+          <div className="contact-widget media">
+            <img src="assets/images/icon-4.png" alt="monitor" width="50px" />
+            <div className="media-body">
+              <h6 className="widget-title">Production Office</h6>
+              <p className="widget-content">hello@youriste.com</p>
             </div>
           </div>
+          <div className="contact-widget media">
+            <img src="assets/images/icon-5.png" alt="book" width="40px" />
+            <div className="media-body">
+              <h6 className="widget-title">Administration Office</h6>
+              <p className="widget-content">hello@youriste.com</p>
+            </div>
+          </div>
+        </section>
+        <section className="contact-form-wrapper">
+          <form action="index.html">
+            <div className="row">
+              <div className="form-group col-md-6">
+                <label htmlFor="name">
+                  YOUR NAME <sup>*</sup>
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Name *"
+                />
+              </div>
+              <div className="form-group col-md-6">
+                <label htmlFor="email">
+                  YOUR EMAIL ADDRESS <sup>*</sup>
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="feeney.matteo@schmeler.com"
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-md-6">
+                <label htmlFor="subject">
+                  SUBJECT <sup>*</sup>
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  name="subject"
+                  placeholder="Development"
+                />
+              </div>
+              <div className="form-group col-md-6">
+                <label htmlFor="phone">
+                  YOUR PHONE NUMBER <sup>*</sup>
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="635-396-9570"
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-12">
+                <label htmlFor="message">
+                  HOW CAN WE HELP YOU? <sup>*</sup>
+                </label>
+                <textarea
+                  name="message"
+                  id="message"
+                  className="form-control"
+                  rows={7}
+                  placeholder="Hi there, I would like to ..."
+                  defaultValue={""}
+                />
+              </div>
+            </div>
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary mb-4">
+                Submit
+              </button>
+              <p className="form-footer-text">
+                We'll get back to you in 1-2 business days.
+              </p>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer className="foi-footer text-white">
+      <div className="container">
+        <div className="row footer-content">
+          <div className="col-xl-6 col-lg-7 col-md-8">
+            <h2 className="mb-0">
+              Do you want to know more or just have a question? write to us.
+            </h2>
+          </div>
+          <div className="col-md-4 col-lg-5 col-xl-6 py-3 py-md-0 d-md-flex align-items-center justify-content-end">
+            <a href="contact.html" className="btn btn-danger btn-lg">
+              Contact form
+            </a>
+          </div>
+        </div>
+        <div className="row footer-widget-area">
+          <div className="col-md-3">
+            <div className="py-3">
+              <img src="assets/images/logo-white.svg" alt="FOI" />
+            </div>
+            <p className="font-os font-weight-semibold mb3">Get our mobile app</p>
+            <div>
+              <button className="btn btn-app-download mr-2">
+                <img src="assets/images/ios.svg" alt="App store" />
+              </button>
+              <button className="btn btn-app-download">
+                <img src="assets/images/android.svg" alt="play store" />
+              </button>
+            </div>
+          </div>
+          <div className="col-md-3 mt-3 mt-md-0">
+            <nav>
+              <ul className="nav flex-column">
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    Account
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    My tasks
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    Projects
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    Edit profile
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    Activity
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="col-md-3 mt-3 mt-md-0">
+            <nav>
+              <ul className="nav flex-column">
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    About
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    Services
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    Careers{" "}
+                    <span className="badge badge-pill badge-secondary ml-3">
+                      Hiring
+                    </span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    Blog
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#!" className="nav-link">
+                    Shop with us
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="col-md-3 mt-3 mt-md-0">
+            <p>
+              © foi. 2020{" "}
+              <a
+                href="https://www.bootstrapdash.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-reset"
+              >
+                BootstrapDash
+              </a>
+              .
+            </p>
+            <p>All rights reserved.</p>
+            <nav className="social-menu">
+              <a href="#!">
+                <img src="assets/images/facebook.svg" alt="facebook" />
+              </a>
+              <a href="#!">
+                <img src="assets/images/instagram.svg" alt="instagram" />
+              </a>
+              <a href="#!">
+                <img src="assets/images/twitter.svg" alt="twitter" />
+              </a>
+              <a href="#!">
+                <img src="assets/images/youtube.svg" alt="youtube" />
+              </a>
+            </nav>
+          </div>
         </div>
       </div>
-    </section>
+    </footer>
   </>
   </div>
   )

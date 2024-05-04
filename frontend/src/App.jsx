@@ -1,16 +1,25 @@
 import React from 'react'
 import {BrowserRouter, Route, Routes} from "react-router-dom"
-import Navbar from './Components/Navbar'
-import Contact from './Components/Contact'
+import './App.css'
 import Home from './Components/Home'
-
+import Contact from './Components/Contact'
+import About from './Components/About'
+import Features from './Components/Features'
+import Register from './Components/Register'
+import Login from './Components/Login'
 const App = () => {
   return (
     <BrowserRouter>
-    <Navbar />
     <Routes>
-      <Route path = '/' element= {<Home/>} />
-      <Route path = '/Contact' element= {<Contact/>} />
+    
+     <Route path='/' element={<Home/>} />
+     <Route path='/Contact' element={<Contact/>} />
+     <Route path='/About' element={<About/>} />
+     <Route path='/Features' element={<Features/>} />
+     <Route path='/Register' element={<Register/>} />
+     <Route path='/Login' element={<Login/>} />
+     
+
     </Routes>
     </BrowserRouter>
 
