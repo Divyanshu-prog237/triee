@@ -8748,3 +8748,26 @@ html {
   color: #ffffff; }
 
 /*# sourceMappingURL=style.css.map */
+
+/*---------------Custom CSS--------------*/
+/*-------Service pages----------*/
+.m-vid{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+}
+.head-img{
+  height: 80vh;
+  background-image: url('./assets/services_banner.jpg');
+  background-size: cover;
+  object-fit: contain;
+  margin-bottom: 100px;
+} 
+/*.s-img{
+  width: 100%;
+}
+.ser-img{
+   width: 100%; 
+   height: 100%; 
+  object-fit: cover;
+}*/

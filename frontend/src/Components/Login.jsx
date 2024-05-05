@@ -62,10 +62,10 @@ const Login = () => {
                   <Link className="dropdown-item" href="blog.html">
                     Blog
                   </Link>
-                  <Link className="dropdown-item" href="login.html">
+                  <Link className="dropdown-item" to="/login">
                     Login
                   </Link>
-                  <Link className="dropdown-item" href="register.html">
+                  <Link className="dropdown-item" to="/register">
                     Register <span className="sr-only">(current)</span>
                   </Link>
                   <Link className="dropdown-item" href="faq.html">

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import team from '../assets/images/404.png'
+import specialization from '../assets/specializations.png.jpeg'
 
 
 
@@ -10,7 +11,7 @@ const Home = () => {
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-    <title>FOI App Landing Page</title>
+    <title>BUSINESS INCUBATOR</title>
     <link
       rel="stylesheet"
       href="assets/vendors/fontawesome-free/css/all.min.css"
@@ -65,9 +66,9 @@ const Home = () => {
                   <a className="dropdown-item" href="blog.html">
                     Blog
                   </a>
-                  <a className="dropdown-item" href="login.html">
+                  <Link className="dropdown-item" to="/login">
                     Login
-                  </a>
+                  </Link>
                   <Link className="dropdown-item" to="/Register">
                     Register
                   </Link>
@@ -91,6 +92,11 @@ const Home = () => {
               <li className="nav-item">
                 <Link className="nav-link" to ="/Contact">
                   Contact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to ="/Services">
+                  Services
                 </Link>
               </li>
             </ul>
@@ -357,7 +363,7 @@ const Home = () => {
         <div className="row">
           <div className="col-md-6 mb-5 mb-md-0">
             <img
-              src="assets/images/app_2.png"
+              src={specialization}
               alt="special offers"
               className="img-fluid"
               width="492px"

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
@@ -15,9 +16,9 @@ const Register = () => {
     <header className="foi-header">
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
-          <a className="navbar-brand" href="index.html">
+          <Link className="navbar-brand" to="/Home">
             <img src="assets/images/logo.svg" alt="FOI" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler d-lg-none"
             type="button"
@@ -32,19 +33,19 @@ const Register = () => {
           <div className="collapse navbar-collapse" id="collapsibleNavId">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="index.html">
+                <Link className="nav-link" to="/Home">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="about.html">
+                <Link className="nav-link" to="/About">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="features.html">
+                <Link className="nav-link" to="/Features">
                   Features
-                </a>
+                </Link>
               </li>
               <li className="nav-item active dropdown">
                 <a
