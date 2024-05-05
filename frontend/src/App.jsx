@@ -8,6 +8,7 @@ import Features from './Components/Features'
 import Register from './Components/Register'
 import Login from './Components/Login'
 import Services from './Components/Services'
+import Roadmap from './Components/Roadmap'
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ const App = () => {
      <Route path='/Register' element={<Register/>} />
      <Route path='/Login' element={<Login/>} />
      <Route path='/Services' element={<Services/>} />
+     <Route path='/Roadmap' element={<Roadmap/>} />
      
 
     </Routes>

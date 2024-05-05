@@ -8763,6 +8763,20 @@ html {
   object-fit: contain;
   margin-bottom: 100px;
 } 
+.roadmap{
+  width: 200px;
+  height:200px;
+  margin-top: 100px;
+}
+.roadmap-card{
+  width: 90%;
+  background-color: rgb(2, 2, 109);
+  color: white;
+  height: 300px;
+  padding: 50px;
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
 /*.s-img{
   width: 100%;
 }
@@ -8771,3 +8785,53 @@ html {
    height: 100%; 
   object-fit: cover;
 }*/
+
+.app-container {
+  max-width: 1100px;
+  margin:  auto;
+  padding: 20px;
+  /* background-color: rgba(128, 0, 0, 0.521); */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.r-head {
+  text-align: center;
+  color: #333;
+}
+
+.step-container {
+  height: 170px;
+  width: 700px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: transparent;
+  background-color: rgba(128, 0, 0, 0.521);
+  border-bottom: white solid 1px;
+  border-right: white solid 1px;
+  /* backdrop-filter: "blur(30px)"; */
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.r-txt {
+  color: white;
+}
+
+.r-p {
+  color: #ffffff;
+}
+.i{
+  height: 170px;
+  margin-top: 47px;
+  
+}
+.iii{
+  height: 170px;
+  margin-top: 2px;
+  
+}
+.ii{
+  height: 170px;
+  margin-top: 2px;
+  margin-left: 110px;
+} 

@@ -11,7 +11,6 @@ import amazon from '../assets/images/clients/amazon.svg'
 import google from '../assets/images/clients/google.svg'
 
 
-
 const Home = () => {
   return (
     <div><>
@@ -431,7 +430,7 @@ const Home = () => {
     </section>
     <section className="py-5 mb-5">
       <div className="container">
-        <h2>Choose the plan that’s right for yor business</h2>
+        <h2>Our Services</h2>
         <p className="text-muted mb-5">
           Thank you for your very professional and prompt response. I wished I had
           found you before{" "}
@@ -440,14 +439,11 @@ const Home = () => {
           <div className="col-lg-4 mb-4">
             <div className="card pricing-card border-warning">
               <div className="card-body">
-                <h3 className="mb-1">Starter</h3>
-                <h3 className="mb-1 text-warning">Free</h3>
-                <p className="payment-period">Per month</p>
+                <h3 className="mb-1">Planning</h3>
                 <p className="mb-4">
-                  Thank you for your very professional and prompt response.
-                </p>
+                Our planning services craft tailored business roadmaps through market research and financial modeling, guiding startups and pivoting businesses for sustainable growth.                </p>
                 <button className="btn btn-outline-warning btn-rounded">
-                  Get Started
+                  Know more
                 </button>
               </div>
             </div>
@@ -455,14 +451,11 @@ const Home = () => {
           <div className="col-lg-4 mb-4">
             <div className="card pricing-card border-primary active">
               <div className="card-body">
-                <h3>Popular</h3>
-                <h3 className="text-primary">$23.00</h3>
-                <p className="payment-period">Per month</p>
+                <h3>Managing</h3>
                 <p className="mb-4">
-                  Thank you for your very professional and prompt response.
-                </p>
+                Our launching services propel your business forward, offering expert guidance on locations, marketing, and funding.                 </p>
                 <button className="btn btn-primary btn-rounded">
-                  Get Started
+                  Know more
                 </button>
               </div>
             </div>
@@ -470,14 +463,11 @@ const Home = () => {
           <div className="col-lg-4 mb-4">
             <div className="card pricing-card border-success">
               <div className="card-body">
-                <h3>Enterprise</h3>
-                <h3 className="text-success">$40.00</h3>
-                <p className="payment-period">Per month</p>
+                <h3>Launching</h3>
                 <p className="mb-4">
-                  Thank you for your very professional and prompt response.
-                </p>
+                Our managing services drive ongoing success for your business. From seamless operations to strategic growth planning                </p>
                 <button className="btn btn-outline-success btn-rounded">
-                  Get Started
+                  Know more
                 </button>
               </div>
             </div>
@@ -485,6 +475,16 @@ const Home = () => {
         </div>
       </div>
     </section>
+    <section className='d-flex justify-content-center'>
+              
+                    <div className="card roadmap-card">
+                        <h1>Start and grow your business</h1>
+                        <hr />
+                        <h5 className='mt-4 mb-4'>Want to be an entrepreneur? Learn how to get started on your business in few steps</h5>
+                        <Link to='/Roadmap' class="btn btn-danger w-25">Start a business</Link>
+                    </div>
+                
+            </section>
     <section className="py-5 mb-5">
       <div className="container">
         <h2>Satisfied Users</h2>
