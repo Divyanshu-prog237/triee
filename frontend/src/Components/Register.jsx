@@ -86,21 +86,21 @@ const Register = () => {
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="contact.html">
+                <Link className="nav-link" to="/contact">
                   contact
-                </a>
+                </Link>
               </li>
             </ul>
             <ul className="navbar-nav mt-2 mt-lg-0">
               <li className="nav-item mr-2 mb-3 mb-lg-0">
-                <a className="btn btn-secondary" href="register.html">
+                <Link className="btn btn-secondary" to="/register">
                   Sign up
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="btn btn-secondary" href="login.html">
+                <Link className="btn btn-secondary" href="/login">
                   Login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

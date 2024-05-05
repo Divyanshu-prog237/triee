@@ -2,6 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import team from '../assets/images/404.png'
 import specialization from '../assets/specializations.png.jpeg'
+import ios from '../assets/images/ios.svg'
+/*import android from '/assets/images/android.svg'*/
+import slack from '../assets/images/clients/slack.svg'
+import spotify from  '../assets/images/clients/shopify.svg'
+import paypal from '../assets/images/clients/paypal.svg'
+import amazon from '../assets/images/clients/amazon.svg'
+import google from '../assets/images/clients/google.svg'
 
 
 
@@ -132,10 +139,10 @@ const Home = () => {
               </div>
               <div>
                 <button className="btn btn-app-download mr-2">
-                  <img src="assets/images/ios.svg" alt="App store" />
+                  <img src={ios} alt="App store" />
                 </button>
                 <button className="btn btn-app-download">
-                  <img src="assets/images/android.svg" alt="play store" />
+                  <img src={ios} alt="play store" />
                 </button>
               </div>
             </div>
@@ -209,35 +216,35 @@ const Home = () => {
                   <div className="d-flex flex-wrap justify-content-center">
                     <div className="clients-logo">
                       <img
-                        src="assets/images/clients/slack.svg"
+                        src={slack}
                         alt="Slack"
                         className="img-fluid"
                       />
                     </div>
                     <div className="clients-logo">
                       <img
-                        src="assets/images/clients/spotify.svg"
+                        src={spotify}
                         alt="Spotify"
                         className="img-fluid"
                       />
                     </div>
                     <div className="clients-logo">
                       <img
-                        src="assets/images/clients/paypal.svg"
+                        src={paypal}
                         alt="Paypal"
                         className="img-fluid"
                       />
                     </div>
                     <div className="clients-logo">
                       <img
-                        src="assets/images/clients/amazon.svg"
+                        src={amazon}
                         alt="Amazon"
                         className="img-fluid"
                       />
                     </div>
                     <div className="clients-logo">
                       <img
-                        src="assets/images/clients/google.svg"
+                        src={google}
                         alt="Google"
                         className="img-fluid"
                       />

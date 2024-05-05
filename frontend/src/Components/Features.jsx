@@ -1,4 +1,6 @@
 import React from 'react'
+import office from '../assets/office.jpg'
+import { Link } from 'react-router-dom'
 
 const Features = () => {
   return (
@@ -6,7 +8,7 @@ const Features = () => {
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-    <title>FOI App Landing Page</title>
+    <title>BUSINESS INCUBATOR</title>
     <link
       rel="stylesheet"
       href="assets/vendors/fontawesome-free/css/all.min.css"
@@ -32,19 +34,19 @@ const Features = () => {
           <div className="collapse navbar-collapse" id="collapsibleNavId">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="index.html">
+                <Link className="nav-link" to="/Register">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="about.html">
+                <Link className="nav-link" to="/about">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item active">
-                <a className="nav-link" href="features.html">
+                <Link className="nav-link" to="/features">
                   Features <span className="sr-only">(current)</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -85,21 +87,21 @@ const Features = () => {
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="contact.html">
+                <Link className="nav-link" href="/contact">
                   contact
-                </a>
+                </Link>
               </li>
             </ul>
             <ul className="navbar-nav mt-2 mt-lg-0">
               <li className="nav-item mr-2 mb-3 mb-lg-0">
-                <a className="btn btn-secondary" href="register.html">
+                <Link className="btn btn-secondary" to="/register">
                   Sign up
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="btn btn-secondary" href="login.html">
+                <Link className="btn btn-secondary" to="/login">
                   Login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -129,10 +131,9 @@ const Features = () => {
                 alt="icon"
                 className="feature-icon"
               />
-              <h5 className="feature-title">Online Payment</h5>
+              <h5 className="feature-title">Physical Workspace</h5>
               <p className="feature-content">
-                Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do
-                eiusmod teporara incididunt ugt labore.
+              They often provide office space, meeting rooms, and sometimes laboratories or workshop areas.
               </p>
               <a href="#!" className="feature-link">
                 Find out More
@@ -140,14 +141,14 @@ const Features = () => {
             </div>
             <div className="col-md-4 foi-feature">
               <img
-                src="assets/images/icon_2.png"
+                src={office}
                 alt="icon"
                 className="feature-icon"
+                width={500}
               />
-              <h5 className="feature-title">Online Payment</h5>
+              <h5 className="feature-title">Infrastructure and Utilities</h5>
               <p className="feature-content">
-                Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do
-                eiusmod teporara incididunt ugt labore.
+              Facilities like internet connectivity, electricity, water, heating/cooling systems, and office equipment are usually provided.
               </p>
               <a href="#!" className="feature-link">
                 Find out More
@@ -159,10 +160,10 @@ const Features = () => {
                 alt="icon"
                 className="feature-icon"
               />
-              <h5 className="feature-title">Online Payment</h5>
+              <h5 className="feature-title">Business Support Services</h5>
               <p className="feature-content">
-                Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do
-                eiusmod teporara incididunt ugt labore.
+              This includes assistance with business planning, market research, 
+              financial modeling, and access to legal and accounting services. 
               </p>
               <a href="#!" className="feature-link">
                 Find out More
@@ -171,10 +172,10 @@ const Features = () => {
           </div>
           <div className="row pt-5">
             <div className="col-md-4 foi-feature">
-              <h5 className="feature-title">Secure Data</h5>
+              <h5 className="feature-title">Network Opportunities</h5>
               <p className="feature-content">
-                Lorem ipsum dolor sit amt, consectet adop adipisicing elit, sed do
-                eiusmod teporara incididunt ugt labore.
+              s: Incubators facilitate networking events, workshops, seminars, and conferences where startups can
+               meet mentors, investors, industry experts, and other entrepreneurs.
               </p>
               <a href="#!" className="feature-link">
                 Find out More
