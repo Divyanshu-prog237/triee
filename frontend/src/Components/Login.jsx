@@ -1,13 +1,68 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import login from "../assets/images/login.png"
+//import useAppContext from '../../AppContext'
+import { useFormik } from 'formik'
 
-const Login = () => {
+
+
+  const Login = () => {
+   // const { setLoggedin } = useAppContext();
+
+    const loginForm = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        onSubmit: async (values, action) => {
+            console.log(values);
+
+            const res = await fetch('http://localhost:3000/users1/authenticate', {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            console.log(res.status);
+            action.resetForm();
+
+            if (res.status === 200) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful'
+                })
+                setLoggedin(true);
+
+                const data = await res.json();
+                sessionStorage.setItem('isloggedin', true);
+                if(data.role === 'admin'){
+                    sessionStorage.setItem('admin', JSON.stringify(data));
+                    navigate('/admin/base');
+                }else{
+                    sessionStorage.setItem('user', JSON.stringify(data));
+                    navigate('/');
+                }
+            } else if (res.status === 400
+                ) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login Failed',
+                    text: 'Invalid email or password'
+
+                })
+            }
+        },
+        // step6: validation of LoginSchema
+        
+    });
+
   return ( 
     <div><>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-    <title>FOI App Landing Page</title>
+    <title>BUSINESS INCUBATOR</title>
     <link
       rel="stylesheet"
       href="assets/vendors/fontawesome-free/css/all.min.css"
@@ -33,22 +88,22 @@ const Login = () => {
           <div className="collapse navbar-collapse" id="collapsibleNavId">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/Home">
+                <a className="nav-link" href="index.html">
                   Home
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/About">
+                <a className="nav-link" href="about.html">
                   About
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Features">
+                <a className="nav-link" href="features.html">
                   Features
-                </Link>
+                </a>
               </li>
               <li className="nav-item active dropdown">
-                <Link
+                <a
                   className="nav-link dropdown-toggle"
                   href="#"
                   id="pagesMenu"
@@ -57,45 +112,45 @@ const Login = () => {
                   aria-expanded="false"
                 >
                   Pages
-                </Link>
+                </a>
                 <div className="dropdown-menu" aria-labelledby="pagesMenu">
-                  <Link className="dropdown-item" href="blog.html">
+                  <a className="dropdown-item" href="blog.html">
                     Blog
-                  </Link>
-                  <Link className="dropdown-item" to="/login">
-                    Login
-                  </Link>
-                  <Link className="dropdown-item" to="/register">
-                    Register <span className="sr-only">(current)</span>
-                  </Link>
-                  <Link className="dropdown-item" href="faq.html">
+                  </a>
+                  <a className="dropdown-item" href="login.html">
+                    Login <span className="sr-only">(current)</span>
+                  </a>
+                  <a className="dropdown-item" href="register.html">
+                    Register
+                  </a>
+                  <a className="dropdown-item" href="faq.html">
                     FAQ
-                  </Link>
-                  <Link className="dropdown-item" href="404.html">
+                  </a>
+                  <a className="dropdown-item" href="404.html">
                     404
-                  </Link>
-                  <Link className="dropdown-item" href="careers.html">
+                  </a>
+                  <a className="dropdown-item" href="careers.html">
                     Careers
-                  </Link>
-                  <Link className="dropdown-item" href="blog-single.html">
+                  </a>
+                  <a className="dropdown-item" href="blog-single.html">
                     Single blog
-                  </Link>
-                  <Link className="dropdown-item" href="privacy-policy.html">
-                    Privacy Policy
-                  </Link>
+                  </a>
+                  <a className="dropdown-item" href="privacy-policy.html">
+                    Privacy policy
+                  </a>
                 </div>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/Contact">
+                <a className="nav-link" href="contact.html">
                   contact
-                </Link>
+                </a>
               </li>
             </ul>
             <ul className="navbar-nav mt-2 mt-lg-0">
               <li className="nav-item mr-2 mb-3 mb-lg-0">
-                <Link className="btn btn-secondary" to="/Register">
+                <a className="btn btn-secondary" href="register.html">
                   Sign up
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
                 <Link className="btn btn-secondary" to="/Login">
@@ -114,9 +169,9 @@ const Login = () => {
             <section className="auth-wrapper">
               <div className="row">
                 <div className="col-md-6 mb-4 mb-md-0">
-                  <h2 className="auth-section-title">Create account</h2>
+                  <h2 className="auth-section-title">Log In</h2>
                   <p className="auth-section-subtitle">
-                    Create your account to continue.
+                    Sign in to your account to continue.
                   </p>
                   <form action="/login.html" method="POST">
                     <div className="form-group">
@@ -128,7 +183,9 @@ const Login = () => {
                         className="form-control"
                         id="email"
                         name="email"
-                        placeholder="Email"
+                        placeholder="Email *"
+                        onChange={loginForm.handleChange}
+                        value={loginForm.values.email}
                       />
                     </div>
                     <div className="form-group">
@@ -140,37 +197,46 @@ const Login = () => {
                         className="form-control"
                         id="password"
                         name="password"
-                        placeholder="Password"
+                        placeholder="Password *"
+                        onChange={loginForm.handleChange}
+                        value={loginForm.values.password}
                       />
                     </div>
-                    <div className="form-group">
-                      <label htmlFor="confirmPassword">
-                        Confirm Password <sup>*</sup>
-                      </label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        placeholder="Confirm Password"
-                      />
+                    <div className="form-actions-wrapper d-flex flex-wrap align-items-center justify-content-between">
+                      <div className="form-check">
+                        <input
+                          className="form-check-input"
+                          type="checkbox"
+                          defaultValue=""
+                          id="keepLogin"
+                        />
+                        <label className="form-check-label" htmlFor="keepLogin">
+                          keep me login
+                        </label>
+                      </div>
+                      <a href="#!" className="forgot-password-link">
+                        Forgot password?
+                      </a>
                     </div>
                     <button
-                      className="btn btn-primary btn-auth-submit"
+                      className="btn btn-primary"
                       type="submit"
                     >
-                      Create account
+                      Submit
                     </button>
                   </form>
                   <p className="mb-0">
-                    <Link to="/Login" className="text-dark font-weight-bold">
-                      Already have an acocunt? Sign in
-                    </Link>
+                    <a
+                      href="register.html"
+                      className="text-dark font-weight-bold"
+                    >
+                      New User? Sign Up
+                    </a>
                   </p>
                 </div>
                 <div className="col-md-6 d-flex align-items-center">
                   <img
-                    src="assets/images/Register.png"
+                    src={login}
                     alt="login"
                     className="img-fluid"
                   />

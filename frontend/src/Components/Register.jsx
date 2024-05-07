@@ -1,7 +1,54 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useFormik } from 'formik'
+
+import register from '../assets/images/Register.png'
+
+
 
 const Register = () => {
+  const navigate = useNavigate()
+
+  const SignupForm = useFormik({
+    initialValues: {
+        email: '',
+        password: '',
+        cpassword:'',
+        createdAt: new Date()
+    },
+    onSubmit: async (values, action) => {
+
+        console.log(values);
+
+        const res = await fetch('http://localhost:3000/users1/add', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+
+        });
+        console.log(res.status)
+        action.resetForm();
+
+        if (res.status === 200) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Signup Success',
+                text: 'You have been successfully signed up!',
+            })
+            navigate('/Login');
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+
+        }
+    },
+    //validationSchema: SignupSchema,
+});
   return (
     <div><>
     <meta charSet="UTF-8" />
@@ -129,6 +176,8 @@ const Register = () => {
                         id="email"
                         name="email"
                         placeholder="Email"
+                        onChange={SignupForm.handleChange}
+                        value={SignupForm.values.email}
                       />
                     </div>
                     <div className="form-group">
@@ -141,6 +190,8 @@ const Register = () => {
                         id="password"
                         name="password"
                         placeholder="Password"
+                        onChange={SignupForm.handleChange}
+                        value={SignupForm.values.password}
                       />
                     </div>
                     <div className="form-group">
@@ -153,24 +204,26 @@ const Register = () => {
                         id="confirmPassword"
                         name="confirmPassword"
                         placeholder="Confirm Password"
+                        value={SignupForm.values.password}
+                        onChange={SignupForm.handleChange}
                       />
                     </div>
                     <button
-                      className="btn btn-primary btn-auth-submit"
+                      className="btn btn-primary"
                       type="submit"
                     >
                       Create account
                     </button>
                   </form>
-                  <p className="mb-0">
+                  {/* <p className="mb-0">
                     <a href="login.html" className="text-dark font-weight-bold">
                       Already have an acocunt? Sign in
                     </a>
-                  </p>
+                  </p> */}
                 </div>
                 <div className="col-md-6 d-flex align-items-center">
                   <img
-                    src="assets/images/Register.png"
+                    src={register}
                     alt="login"
                     className="img-fluid"
                   />
