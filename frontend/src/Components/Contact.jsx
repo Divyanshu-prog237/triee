@@ -1,5 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+//Footer
+import facebook from '../assets/images/facebook (6).png'
+import instagram from '../assets/images/instagram.png'
+import twitter from '../assets/images/twitter (3).png'
+import youtube from '../assets/images/youtube.png'
+import Logo from '../assets/logo.png'
+import ios from '../assets/images/ios.svg'
+//Footer END
 
 const Contact = () => {
   return (
@@ -15,9 +23,12 @@ const Contact = () => {
     <link rel="stylesheet" href="assets/css/style.css" />
     <header className="foi-header">
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
+      <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
           <Link className="navbar-brand" to="/Home">
-            <img src="assets/images/logo.svg" alt="FOI" />
+            <img src={Logo} alt="FOI" 
+            height={50}
+            style={{ marginTop: "-8px", marginBottom: "-8px" }}
+             />
           </Link>
           <button
             className="navbar-toggler d-lg-none"
@@ -32,9 +43,9 @@ const Contact = () => {
           </button>
           <div className="collapse navbar-collapse" id="collapsibleNavId">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li className="nav-item">
+              <li className="nav-item active">
                 <Link className="nav-link" to="/Home">
-                  Home
+                  Home <span className="sr-only">(current)</span>
                 </Link>
               </li>
               <li className="nav-item">
@@ -48,46 +59,42 @@ const Contact = () => {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <Link
                   className="nav-link dropdown-toggle"
-                  href="#"
-                  id="pagesMenu"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                  to="/Pages"
+
                 >
                   Pages
-                </a>
+                </Link>
                 <div className="dropdown-menu" aria-labelledby="pagesMenu">
-                  <a className="dropdown-item" href="blog.html">
+                  <Link className="dropdown-item" href="blog.html">
                     Blog
-                  </a>
-                  <a className="dropdown-item" href="login.html">
+                  </Link>
+                  <Link className="dropdown-item" to="/login">
                     Login
-                  </a>
-                  <a className="dropdown-item" href="register.html">
+                  </Link>
+                  <Link className="dropdown-item" to="/Register">
                     Register
-                  </a>
-                  <a className="dropdown-item" href="faq.html">
+                  </Link>
+                  <Link className="dropdown-item"  to="/Faq">
                     FAQ
-                  </a>
-                  <a className="dropdown-item" href="404.html">
-                    404
-                  </a>
-                  <a className="dropdown-item" href="careers.html">
-                    Careers
-                  </a>
-                  <a className="dropdown-item" href="blog-single.html">
+                  </Link>
+                  <Link className="dropdown-item" to="/Blog">
                     Single blog
-                  </a>
-                  <a className="dropdown-item" href="privacy-policy.html">
+                  </Link>
+                  <Link className="dropdown-item" to="/Privacypolicy">
                     Privacy policy
-                  </a>
+                  </Link>
                 </div>
               </li>
-              <li className="nav-item active">
-                <Link className="nav-link" to="/contact">
-                  contact <span className="sr-only">(current)</span>
+              <li className="nav-item">
+                <Link className="nav-link" to ="/Contact">
+                  Contact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to ="/Services">
+                  Services
                 </Link>
               </li>
             </ul>
@@ -98,7 +105,7 @@ const Contact = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="btn btn-secondary" to="/login">
+                <Link className="btn btn-secondary" to="/Login">
                   Login
                 </Link>
               </li>
@@ -222,23 +229,26 @@ const Contact = () => {
             </h2>
           </div>
           <div className="col-md-4 col-lg-5 col-xl-6 py-3 py-md-0 d-md-flex align-items-center justify-content-end">
-            <a href="contact.html" className="btn btn-danger btn-lg">
+            <Link to="/Contact" className="btn btn-danger btn-lg">
               Contact form
-            </a>
+            </Link>
           </div>
         </div>
         <div className="row footer-widget-area">
           <div className="col-md-3">
             <div className="py-3">
-              <img src="assets/images/logo-white.svg" alt="FOI" />
+              <img src={Logo} 
+              height={120}
+              style={{ marginTop: "-8px", marginBottom: "-8px" }}
+              alt="FOI" />
             </div>
             <p className="font-os font-weight-semibold mb3">Get our mobile app</p>
             <div>
               <button className="btn btn-app-download mr-2">
-                <img src="assets/images/ios.svg" alt="App store" />
+                <img src={ios} alt="App store" />
               </button>
               <button className="btn btn-app-download">
-                <img src="assets/images/android.svg" alt="play store" />
+                <img src={ios} alt="play store" />
               </button>
             </div>
           </div>
@@ -277,14 +287,14 @@ const Contact = () => {
             <nav>
               <ul className="nav flex-column">
                 <li className="nav-item">
-                  <a href="#!" className="nav-link">
+                  <Link to="/About" className="nav-link">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="#!" className="nav-link">
+                  <Link to="/Services" className="nav-link">
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a href="#!" className="nav-link">
@@ -309,30 +319,30 @@ const Contact = () => {
           </div>
           <div className="col-md-3 mt-3 mt-md-0">
             <p>
-              © foi. 2020{" "}
+              © business Incubators 2024{" "}
               <a
                 href="https://www.bootstrapdash.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-reset"
               >
-                BootstrapDash
+
               </a>
               .
             </p>
             <p>All rights reserved.</p>
             <nav className="social-menu">
               <a href="#!">
-                <img src="assets/images/facebook.svg" alt="facebook" />
+                <img src={facebook} alt="facebook" />
               </a>
               <a href="#!">
-                <img src="assets/images/instagram.svg" alt="instagram" />
+                <img src={instagram} alt="instagram" />
               </a>
               <a href="#!">
-                <img src="assets/images/twitter.svg" alt="twitter" />
+                <img src={twitter} alt="twitter" />
               </a>
               <a href="#!">
-                <img src="assets/images/youtube.svg" alt="youtube" />
+                <img src={youtube} alt="youtube" />
               </a>
             </nav>
           </div>

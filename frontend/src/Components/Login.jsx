@@ -3,11 +3,17 @@ import { Link } from 'react-router-dom'
 import login from "../assets/images/login.png"
 //import useAppContext from '../../AppContext'
 import { useFormik } from 'formik'
+import * as Yup from 'yup'
+import Swal from 'sweetalert2'
+import Logo from '../assets/logo.png'
 
-
+const LoginSchema = Yup.object().shape({
+  password: Yup.string().min(4, 'Too short!').max(20, 'Too Long!'),
+  email: Yup.string().email('Invalid email').required('Required')
+});
 
   const Login = () => {
-   // const { setLoggedin } = useAppContext();
+    //const { setLoggedin } = useAppContext();
 
     const loginForm = useFormik({
         initialValues: {
@@ -54,6 +60,7 @@ import { useFormik } from 'formik'
             }
         },
         // step6: validation of LoginSchema
+        validationSchema: LoginSchema
         
     });
 
@@ -70,10 +77,13 @@ import { useFormik } from 'formik'
     <link rel="stylesheet" href="assets/css/style.css" />
     <header className="foi-header">
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
-          <a className="navbar-brand" href="index.html">
-            <img src="assets/images/logo.svg" alt="FOI" />
-          </a>
+      <nav className="navbar navbar-expand-lg navbar-light foi-navbar">
+          <Link className="navbar-brand" to="/Home">
+            <img src={Logo} alt="FOI" 
+            height={50}
+            style={{ marginTop: "-8px", marginBottom: "-8px" }}
+             />
+          </Link>
           <button
             className="navbar-toggler d-lg-none"
             type="button"
@@ -87,70 +97,66 @@ import { useFormik } from 'formik'
           </button>
           <div className="collapse navbar-collapse" id="collapsibleNavId">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li className="nav-item">
-                <a className="nav-link" href="index.html">
-                  Home
-                </a>
+              <li className="nav-item active">
+                <Link className="nav-link" to="/Home">
+                  Home <span className="sr-only">(current)</span>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="about.html">
+                <Link className="nav-link" to="/About">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="features.html">
+                <Link className="nav-link" to="/Features">
                   Features
-                </a>
+                </Link>
               </li>
-              <li className="nav-item active dropdown">
-                <a
+              <li className="nav-item dropdown">
+                <Link
                   className="nav-link dropdown-toggle"
-                  href="#"
-                  id="pagesMenu"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                  to="/Pages"
+
                 >
                   Pages
-                </a>
+                </Link>
                 <div className="dropdown-menu" aria-labelledby="pagesMenu">
-                  <a className="dropdown-item" href="blog.html">
+                  <Link className="dropdown-item" href="blog.html">
                     Blog
-                  </a>
-                  <a className="dropdown-item" href="login.html">
-                    Login <span className="sr-only">(current)</span>
-                  </a>
-                  <a className="dropdown-item" href="register.html">
+                  </Link>
+                  <Link className="dropdown-item" to="/login">
+                    Login
+                  </Link>
+                  <Link className="dropdown-item" to="/Register">
                     Register
-                  </a>
-                  <a className="dropdown-item" href="faq.html">
+                  </Link>
+                  <Link className="dropdown-item"  to="/Faq">
                     FAQ
-                  </a>
-                  <a className="dropdown-item" href="404.html">
-                    404
-                  </a>
-                  <a className="dropdown-item" href="careers.html">
-                    Careers
-                  </a>
-                  <a className="dropdown-item" href="blog-single.html">
+                  </Link>
+                  <Link className="dropdown-item" to="/Blog">
                     Single blog
-                  </a>
-                  <a className="dropdown-item" href="privacy-policy.html">
+                  </Link>
+                  <Link className="dropdown-item" to="/Privacypolicy">
                     Privacy policy
-                  </a>
+                  </Link>
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="contact.html">
-                  contact
-                </a>
+                <Link className="nav-link" to ="/Contact">
+                  Contact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to ="/Services">
+                  Services
+                </Link>
               </li>
             </ul>
             <ul className="navbar-nav mt-2 mt-lg-0">
               <li className="nav-item mr-2 mb-3 mb-lg-0">
-                <a className="btn btn-secondary" href="register.html">
+                <Link className="btn btn-secondary" to="/Register">
                   Sign up
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="btn btn-secondary" to="/Login">
@@ -226,12 +232,12 @@ import { useFormik } from 'formik'
                     </button>
                   </form>
                   <p className="mb-0">
-                    <a
-                      href="register.html"
+                    <Link
+                      to="/Register"
                       className="text-dark font-weight-bold"
                     >
                       New User? Sign Up
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div className="col-md-6 d-flex align-items-center">

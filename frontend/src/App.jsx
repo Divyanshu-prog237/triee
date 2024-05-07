@@ -17,6 +17,7 @@ import Pmanage from './Components/Pmanage'
 import Dashboard from './Components/Dashboard'
 import ViewService from './Components/ViewService'
 import AddServices from './Components/AddServices'
+import Pages from './Components/Pages'
 
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
      <Route path='/Dashboard' element={<Dashboard/>} />
      <Route path='/ViewService' element={<ViewService/>} />
      <Route path='/AddServices' element={<AddServices/>} />
+     <Route path='/Pages' element={<Pages/>} />
     
      
 

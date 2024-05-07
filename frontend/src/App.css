@@ -8835,3 +8835,13 @@ html {
   margin-top: 2px;
   margin-left: 110px;
 } 
+
+ul li a:hover {
+  background: #0056b3;
+}
+ul li:hover ul.dropdown{
+  display: block;
+}
+ul li:hover ul.dropdown li{
+  display: block;
+}
