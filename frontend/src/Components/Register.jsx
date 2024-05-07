@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
-
+import * as Yup from 'yup'
 import register from '../assets/images/Register.png'
+import Swal from 'sweetalert2'
 
+
+const SignupSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().min(4, 'Too short!').max(20, 'Too Long!').required('Required'),
+})
 
 
 const Register = () => {
@@ -47,7 +53,7 @@ const Register = () => {
 
         }
     },
-    //validationSchema: SignupSchema,
+    validationSchema: SignupSchema,
 });
   return (
     <div><>
@@ -165,7 +171,7 @@ const Register = () => {
                   <p className="auth-section-subtitle">
                     Create your account to continue.
                   </p>
-                  <form action="/login.html" method="POST">
+                  <form onSubmit={SignupForm.handleSubmit}>
                     <div className="form-group">
                       <label htmlFor="email">
                         Email <sup>*</sup>

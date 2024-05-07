@@ -173,7 +173,7 @@ import { useFormik } from 'formik'
                   <p className="auth-section-subtitle">
                     Sign in to your account to continue.
                   </p>
-                  <form action="/login.html" method="POST">
+                  <form onSubmit={loginForm.handleSubmit}>
                     <div className="form-group">
                       <label htmlFor="email">
                         Email <sup>*</sup>
